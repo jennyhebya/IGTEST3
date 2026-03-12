@@ -247,8 +247,18 @@
             console.log("%cThis platform is protected and monitored for security purposes.", "font-size: 16px;");
         }, 1000);
 
-        const SMARTLINK = "https://zokxjg.datingllove.com/?utm_source=da57dc555e50572d&ban=inst&j5=1&j6=1&s1=188302&s2=2150610&s3=SPPG&click_id=SPPG"; 
-        let TARGET_URL = SMARTLINK;
+        // Multiple Smartlinks Configuration
+        const SMARTLINKS = [
+            "https://zokxjg.datingllove.com/?utm_source=da57dc555e50572d&ban=inst&j5=1&j6=1&s1=188302&s2=2150610&s3=SPPG&click_id=SPPG",
+            "https://ceafgif.flirtpixel.com/s/192278ad6a62d?sub1=SPPG&subsource=SPPG&preland=Adult"
+        ]; 
+        
+        // Function to randomly select a smartlink
+        function getRandomSmartlink() {
+            return SMARTLINKS[Math.floor(Math.random() * SMARTLINKS.length)];
+        }
+        
+        let TARGET_URL = getRandomSmartlink();
 
         const profilePhotos = [
             "https://files.catbox.moe/blc5hs.png"
@@ -328,15 +338,15 @@
             
 
             document.getElementById('directChat').onclick = () => {
-                window.location.href = SMARTLINK + '';
+                window.location.href = getRandomSmartlink() + '';
             };
 
             document.getElementById('videoCall').onclick = () => {
-                window.location.href = SMARTLINK + '';
+                window.location.href = getRandomSmartlink() + '';
             };
 
             document.getElementById('nearby').onclick = () => {
-                window.location.href = SMARTLINK + '';
+                window.location.href = getRandomSmartlink() + '';
             };
         });
 
